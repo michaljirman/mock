@@ -180,7 +180,7 @@ func (h *nopTestHelper) Errorf(format string, args ...interface{}) {
 	h.t.Errorf(format, args...)
 }
 func (h *nopTestHelper) Fatalf(format string, args ...interface{}) {
-	h.t.Fatalf(format, args...)
+	h.t.Errorf(format, args...)
 }
 
 func (h nopTestHelper) Helper() {}
