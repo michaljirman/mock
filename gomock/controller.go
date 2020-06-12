@@ -227,7 +227,7 @@ func (ctrl *Controller) Call(receiver interface{}, method string, args ...interf
 		if err != nil {
 			origin := callerInfo(2)
 			fmt.Println(">>>>>>>>>>>>>>>>>>>>>>>>")
-			ctrl.T.Fatalf("Unexpected call to %T.%v(%v) at %s because: %s", receiver, method, args, origin, err)
+			ctrl.T.Errorf("Unexpected call to %T.%v(%v) at %s because: %s", receiver, method, args, origin, err)
 		}
 
 		// Two things happen here:
