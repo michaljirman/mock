@@ -225,6 +225,7 @@ func (ctrl *Controller) Call(receiver interface{}, method string, args ...interf
 		expected, err := ctrl.expectedCalls.FindMatch(receiver, method, args)
 		if err != nil {
 			origin := callerInfo(2)
+			fmt.Println(">>>>>>>>>>>>>>>>>>>>>>>>")
 			ctrl.T.Fatalf("Unexpected call to %T.%v(%v) at %s because: %s", receiver, method, args, origin, err)
 		}
 
